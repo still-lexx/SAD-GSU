@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-@section('content')
 <main class="d-flex w-100 bg-light">
     <div class="container d-flex flex-column">
         <div class="row vh-100">
@@ -63,4 +62,3 @@
         </div>
     </div>
 </main>
-@endsection

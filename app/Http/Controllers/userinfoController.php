@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Userinfo;
 class userinfoController extends Controller
 {
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $Userinfo = new Userinfo();
-        // dd($request -> state);
         $Userinfo -> name = $request -> name;
         $Userinfo -> email = $request -> email;
         $Userinfo -> address = $request -> address;

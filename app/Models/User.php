@@ -15,7 +15,14 @@ class User extends Authenticatable
      * The attributes that are mass assignable.
      *
      * @var array
+     *
      */
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+    
     protected $fillable = [
         'name',
         'email',

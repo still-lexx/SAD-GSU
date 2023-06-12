@@ -1,7 +1,6 @@
-<?php
+ <?php
 
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\Routing\Annotation\Route as AnnotationRoute;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +19,22 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware(['auth', 'admin'])->get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Auth::routes();
 
-Route::get('/contact', [App\Http\Controllers\contactcontroller::class, 'index'])->name('contact');
+Route::get('/case', [App\Http\Controllers\caseController::class, 'index'])->name('case');
+Route::get('/view/{id}', [App\Http\Controllers\caseController::class, 'viewCase'])->name('view.viewCase');
+Route::get('/newcase', [App\Http\Controllers\newcaseController::class, 'index'])->name('newcase');
+Route::get('/settings', [App\Http\Controllers\settingsController::class, 'index'])->name('settings');
+// Route::get('/users', [App\Http\Controllers\usersController::class, 'index'])->name('users');
+Route::post('/cases/store', [App\Http\Controllers\newcaseController::class, 'store'])->name('cases.store');
+Route::post('/cases/update', [App\Http\Controllers\caseController::class, 'update'])->name('casesUpdate');
 
 Auth::routes();
 
 Route::post('/userinfo', [App\Http\Controllers\userinfoController::class, 'store'])->name('userinfo');
-Route::get('/userinfo/delete/{id}', [App\Http\Controllers\userinfoController::class, 'destroy']);
+Route::get('/case/delete/{id}', [App\Http\Controllers\caseController::class, 'destroy']);
+
+Route::middleware(['auth', 'admin'])->get('/users', [App\Http\Controllers\usersController::class, 'index'])->name('users');
+Route::middleware(['auth', 'admin'])->get('/users/delete/{id}', [App\Http\Controllers\usersController::class, 'destroy']);
