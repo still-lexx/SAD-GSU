@@ -6,8 +6,7 @@
     </div>
 <div class="container">
     <div class="row card flex-fill w-100">
-        <div class="col-12">
-            <form action="">
+        <div class="col-12 table-responsive">
             <table class="table table-hover my-0">
                 
                 <thead>
@@ -42,21 +41,10 @@
                 @endforeach
                 </tbody>
             </table>
-        </form>
         </div>
     </div>
 
 </div>
-
-{{-- <div class="modal fade" data-backdrop="static">
-    <div class="modal-dialog modal-md">
-        <div class="modal-content container-fluid">
-            <div class="modal-header">
-                <h3 class="modal-tile">Edit</h3>
-            </div>
-        </div>
-    </div>
-</div> --}}
 
 <!-- Modal -->
 <div class="modal fade" id="deleteCase" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
