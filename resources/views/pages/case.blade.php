@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="row">
-            <h1 class="h3 mb-3">Case Files</h1>
-    </div>
+      <h1 class="h3 mb-3">Case Files</h1>
+</div>
 <div class="container">
     <div class="row card flex-fill w-100">
         <div class="col-12 table-responsive">
@@ -29,7 +29,7 @@
                     <td>{{$case -> caseDesc}}</td>
                     <td>{{$case -> status}}</td>
                     <td>                       
-                        <a type="button" href="{{ route('view.viewCase', ['id' => $case->id]) }}" class="btn btn-success" data-id=""><i class="" data-feather="edit"></i> view</a>
+                        <a href="{{ route('view.viewCase', ['id' => $case->id]) }}" class="btn btn-success" data-id=""><i class="" data-feather="edit"></i> view</a>
                         @can('admin')
                             {{-- <button type="button" class="btn btn-danger btn-userinfodelete" data-toggle="modal" data-id="{{$case -> id}}" data-target="#deleteuserinfo"><i class="mdi mdi-trash" data-feather="trash"></i> Delete</button> --}}
                             <button type="button" class="btn btn-danger btnDeleteCase" data-id="{{$case -> id}}" data-toggle="modal" data-target="#deleteCase">

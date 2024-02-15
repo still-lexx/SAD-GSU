@@ -22,11 +22,18 @@ class User extends Authenticatable
     {
         return $this->role === 'admin';
     }
+
+    public function isStudent()
+    {
+        return $this->role === 'student';
+    }
     
     protected $fillable = [
         'name',
         'email',
         'role',
+        'reg_number',
+        'phone_number',
         'password',
     ];
 

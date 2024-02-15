@@ -2,12 +2,10 @@
 
 @section('content')
 <div class="container">
-    
+<div class="row">
+    <h1 class="h3 mb-3">Users</h1>
+</div>
     <div class="row card w-100">
-        <div class="card-header">
-            Users
-            <a href="{{ route('register') }}" class="ml-4 text-sm text-right btn btn-primary">Add new User</a>
-        </div>
         <div class="col-12 card-body">
             <table class="table table-hover my-0">
                 <thead>

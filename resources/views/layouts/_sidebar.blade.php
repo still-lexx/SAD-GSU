@@ -7,6 +7,7 @@
             <li class="sidebar-header">
                 Pages
             </li>
+            @cannot('student')
         @can('admin')
             <li class="sidebar-item">
                 <a class="sidebar-link" href="{{route('home')}}">
@@ -37,6 +38,31 @@
                   <i class="align-middle" data-feather="user"></i> <span class="align-middle">Users</span>
                 </a>
             </li>
+            @endcan
+            @can('admin')
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{route('students')}}">
+                  <i class="align-middle" data-feather="user"></i> <span class="align-middle">Students</span>
+                </a>
+            </li>
+            @endcan
+            @endcannot
+            @can('student')
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{route('students.dash')}}">
+                  <i class="align-middle" data-feather="user"></i> <span class="align-middle">Dashboard</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{route('students')}}">
+                <i class="align-middle" data-feather="user"></i> <span class="align-middle">Case History</span>
+              </a>
+          </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{route('students')}}">
+              <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+            </a>
+        </li>
             @endcan
         </ul>
     </div>

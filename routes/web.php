@@ -38,3 +38,7 @@ Route::get('/case/delete/{id}', [App\Http\Controllers\caseController::class, 'de
 
 Route::middleware(['auth', 'admin'])->get('/users', [App\Http\Controllers\usersController::class, 'index'])->name('users');
 Route::middleware(['auth', 'admin'])->get('/users/delete/{id}', [App\Http\Controllers\usersController::class, 'destroy']);
+Route::middleware(['auth', 'admin'])->get('/students', [App\Http\Controllers\studentController::class, 'index'])->name('students');
+Route::middleware(['auth', 'admin'])->post('/students/store', [App\Http\Controllers\studentController::class, 'store'])->name('students.store');
+
+Route::middleware(['auth', 'student'])->get('/students/dashboard', [App\Http\Controllers\studentController::class, 'studentDashoard'])->name('students.dash');
